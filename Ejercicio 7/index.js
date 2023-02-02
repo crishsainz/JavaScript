@@ -5,3 +5,4 @@ function sumaNumPares(pares) {
   const pares = [1, 2, 3, 4, 5];
   const suma = sumaNumPares(pares);
   console.log("La suma de los números pares es " + suma);
+  
