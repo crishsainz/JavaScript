@@ -1,0 +1,56 @@
+<h1>Eventos</h1>
+<p>Haz que cuando se haga click sobre el botón “Guardar”, salté un alert con un mensaje de guardado.</p>
+<button id="Guardar">Guardar</button>
+<script>
+    document.getElementById("Guardar").addEventListener("click", function(){
+        alert("Guardado");
+    });
+</script>
+<br>
+<br>
+<p>Cuando hagamos foco sobre este input se pondrá de color amarillo y cuando se lo quitemos cambiará de color</p>
+<label>Nombre</label>
+<input type="text" id="nombreInput">
+<style>
+    .amarillo {
+        background-color: yellow;
+    }
+</style>
+<script>
+    var input = document.getElementById("nombreInput");
+    input.addEventListener("focus", function() {
+        input.classList.add("amarillo");
+    });
+    input.addEventListener("blur", function() {
+        input.classList.remove("amarillo");
+    });
+</script>
+<br>
+<br>
+<p>Dependiendo si escribamos una vocal o una consonante el contenido del input aparecerá de distinto color</p>
+<label>Escribe una letra</label>
+<input type="text" id="letraInput">
+<style>
+    .vocal {
+        background-color: red;
+    }
+    .consonante {
+        background-color: blue;
+    }
+</style>
+<script>
+    var input2 = document.getElementById("letraInput");
+    input2.addEventListener("input", function() {
+        var letra = input2.value;
+        if (letra === "") {
+            input2.classList.remove("vocal");
+            input2.classList.remove("consonante");
+        } else if (['a', 'e', 'i', 'o', 'u'].indexOf(letra.toLowerCase()) !== -1) {
+            input2.classList.remove("consonante");
+            input2.classList.add("vocal");
+        } else {
+            input2.classList.remove("vocal");
+            input2.classList.add("consonante");
+        }
+    });
+</script>
